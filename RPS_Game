@@ -1,0 +1,77 @@
+package mainPackage;
+
+import java.util.Random;
+import java.util.Scanner;
+
+public class mainClass {
+    
+    public static void main(String[] args) {
+        
+        Random random = new Random();
+        int choice,cpuChoice;
+        String input;
+        //rock=1 paper=2 scissors=3
+        System.out.println("Lets play rock paper scissors!");
+        System.out.println("Enter your Choice.");
+        cpuChoice= random.nextInt(2)+1;
+        Scanner tKeyboard = new Scanner(System.in);
+        input = tKeyboard.nextLine();
+        {
+            switch(input.toLowerCase()) {
+                case "rock":
+                    choice = 1;
+                    if(cpuChoice==2 && choice == 1)
+                    {
+                        System.out.println("I got Paper! You Lose!");
+                    }
+                    else if (cpuChoice == 3 && choice == 1 )
+                    {
+                        System.out.println("I got Scissors! You Win!");
+                    }
+                    else
+                    {
+                        System.out.println("I got Rock! It's a Tie!");
+                    }
+                    break;   
+                    
+                case "paper":              
+                    choice = 2;
+                    if(cpuChoice==1 && choice == 2)
+                    {
+                        System.out.println("I got Rock! You Win!");
+                    }
+                    else if (cpuChoice == 3 && choice == 2)
+                    {
+                        System.out.println("I got Scissors! You Lose!");
+                    }
+                    else
+                    {
+                        System.out.println("I got Paper! It's a Tie!");
+                    }
+                    break;
+                    
+                case "scissors":              
+                    choice = 3;
+                    if(cpuChoice==1 && choice == 3)
+                    {
+                        System.out.println("I got Rock! You Lose!");
+                    }
+                    else if (cpuChoice == 2 && choice == 3)
+                    {
+                        System.out.println("I got Paper! You Win!");
+                    }
+                    else
+                    {
+                        System.out.println("I got Scissors! It's a Tie!");
+                    }
+                    break;
+                    
+                default: 
+                    System.out.println("Thats not a choice! Try agian!");
+                    break;
+            }
+        }
+        
+    }
+    
+}
